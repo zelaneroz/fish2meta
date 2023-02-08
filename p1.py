@@ -28,19 +28,19 @@ for i in range(1,5):
     plt.yticks(np.arange(tick_min, tick_max, tick))
     plt.ylim(-100, 50)
 
-avg = [v+w+x+y for v,w,x,y in zip(participants['p1'],participants['p2'],participants['p3'],participants['p4'])]
-#avg = list(map(operator.add,participants['p1'],participants['p2']))
-#avg = np.add(participants['p1'],participants['p2'])
-plt.subplot(3,2,6)
-plt.plot(x,avg,'o')
-for l in [14, 29, 69, 84]:
-    plt.axvline(x=l, linestyle='--')
-plt.title('Average')
-tick_min = -200
-tick_max = 80
-tick = 15
-plt.yticks(np.arange(tick_min, tick_max, tick))
-plt.ylim(-200,50)
+# avg = [v+w+x+y for v,w,x,y in zip(participants['p1'],participants['p2'],participants['p3'],participants['p4'])]
+# #avg = list(map(operator.add,participants['p1'],participants['p2']))
+# #avg = np.add(participants['p1'],participants['p2'])
+# plt.subplot(3,2,6)
+# plt.plot(x,avg,'o')
+# for l in [14, 29, 69, 84]:
+#     plt.axvline(x=l, linestyle='--')
+# plt.title('Average')
+# tick_min = -200
+# tick_max = 80
+# tick = 15
+# plt.yticks(np.arange(tick_min, tick_max, tick))
+# plt.ylim(-200,50)
 plt.tight_layout()
 plt.show()
 

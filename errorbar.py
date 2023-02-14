@@ -1,15 +1,8 @@
-import matplotlib.pyplot as plt
-import numpy as np
+from matplotlib import pyplot as plt
 import warnings
+import numpy as np
 warnings.simplefilter('ignore')
 
-#---PARAMETERS---
-tick_min = -100
-tick_max = 80
-tick = 15
-
-
-#---DATA---
 x = np.arange(1, 101)
 participants = {
 'p1':[-8,-7,-2,-23,8,-7,-2,-35,21,-13,7,4,-17,3,-5,-2,4,1,-8,4,5,-12,4,-35,-17,-4,12,3,-6,2,-47,-16,-10,-31,-48,-33,-31,-15,-28,-44,-26,-34,-29,-38,-21,-8,-11,-18,-34,-10,-28,-26,-23,-46,-9,-2,-31,-26,-8,-17,-28,-25,-16,-21,-26,-38,-15,-14,-22,-25,19,22,-32,1,12,4,8,20,-13,13,-13,1,2,13,-3,42,35,5,-5,26,30,2,-7,9,19,21,24,25,18,-1],
@@ -20,39 +13,22 @@ participants = {
 'p6':[0,3,3,-18,7,-1,-12,-17,-1,-5,6,14,-9,5,-10,13,-2,2,-2,-3,1,1,-14,6,-6,-7,1,4,-13,10,-60,-32,-25,-23,-27,8,-25,-3,-22,-7,6,-18,-8,-8,4,-16,-4,-7,-10,5,-8,-12,-4,10,-21,3,-12,6,8,-6,-16,1,-5,-16,-12,-19,1,-4,6,-11,12,9,6,3,-4,12,1,3,13,-16,2,2,-18,-5,-6,56,34,14,15,6,3,6,11,8,17,-8,18,3,-6,8]
 }
 
-#PLOT
-# fig,ax = plt.subplots(2,3, figsize=(10, 8))
-
-def data_temp():
-    plt.yticks(np.arange(tick_min, tick_max, tick))
-    plt.xticks(np.arange(0, 110, 10))
-    plt.ylim(-100, 75)
-    for l in [15, 30, 70, 85]:
-        plt.axvline(x=l, linestyle='--',c='orange')
-    # plt.xlabel('Throws')
-    # plt.ylabel('Horizontal Distance from Center (cm)')
-
-# for i in range(1,7):
-    # plt.subplot(3, 2, i)
-    # y = participants[f'p{i}']
-    # plt.plot(y)
-    # plt.title(f'Participant {i}')
-    # data_temp()
-    # plt.savefig(f'media/11-30-22/Final/P{i}.png')
-i=6
-y = participants[f'p{i}']
-plt.plot(y)
-plt.title(f'Participant {i}')
-data_temp()
-plt.savefig(f'media/11-30-22/Final/P{i}.png')
-
-
-#AVERAGE
-#plt.subplot(3,2,6)
-# avg = [(v+w+x+y+z+u)/6 for v,w,x,y,z,u in zip(participants['p1'],participants['p2'],participants['p3'],participants['p4'],participants['p5'],participants['p6'])]
-# plt.plot(x,avg)
-# plt.title('Average')
-# data_temp()
-# plt.tight_layout()
-#plt.savefig('media/11-30-22/Final/p1-6.png')
+# Mean and Standard Deviation
+mean,std,max2,min2 = [],[],[],[]
+x = np.arange(1, 101)
+#ERROR BARS
+for i in range(100):
+    data = [participants['p1'][i],participants['p2'][i],participants['p3'][i],participants['p4'][i],participants['p5'][i],participants['p6'][i]]
+    mean.append(np.mean(data))
+    std.append(np.std(data))
+    max2.append(max(data))
+    min2.append(min(data))
+print()
+plt.figure(figsize=(10,6))
+avg = [(v+w+x+y+z+u)/6 for v,w,x,y,z,u in zip(participants['p1'],participants['p2'],participants['p3'],participants['p4'],participants['p5'],participants['p6'])]
+plt.plot(x,avg)
+plt.errorbar(x,mean,std,fmt="o",markersize=.5)
+#PLOT - ERROR BARS & FILL
+plt.fill_between(x,max2,min2,alpha=0.5,linewidth=0, color='#8ecae6')
+plt.savefig('media/11-30-22/Final/errorbar.png')
 plt.show()

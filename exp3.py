@@ -38,6 +38,7 @@ subject = 2
 #exp_data[subject]={'before_u': avg[0:15], 'before_o': avg[15:30], 'prism': avg[30:70], 'after_u':avg[70:85], 'after_o': avg[85:100]}
 print(exp_data[subject])
 avg=[-11,-5,4,4,-1,4,-1,-13,1,-6,2,-13,-8,-6,2,-2,-3,-10,-11,0,-12,-7,-6,-2,2,9,-7,-13,-10,3,-63,-46,-42,-40,-31,-20,-23,-29,-19,-27,-28,-21,-30,-14,-23,-14,-25,-23,-34,-22,-36,-26,-24,-31,-27,-8,-27,-14,-25,-28,-30,-26,-26,-22,-13,-29,-18,-10,-21,-38,-37,-47,-36,-49,-26,-28,-33,-20,-29,-45,-22,-31,-29,-30,-27,-20,-28,-20,-28,-26,-8,-21,-26,-39,-8,-28,-33,-21,-22,-33,-11,-33,-42,-31,-27,-18,-35,-14,-11,-28,29,40,27,9,19,24,2,20,8,3,2,-10,5,2,2,17,17,18,2,15,7,-1,0,3,6,14,7,-8,-7,9]
+
 exp_data[subject] = {'before_u':avg[0:15],'before_o':avg[15:30],'prism_u':avg[30:70],'prism_o':avg[70:110],'after_u':avg[110:125],'after_o':avg[125:140]}
 print(exp_data[subject])
 my_colors = {'before_u': 'b', 'before_o': 'g', 'prism_u': 'r','prism_o': 'r', 'after_u': 'b', 'after_o': 'g'}
@@ -97,7 +98,7 @@ plt.text(185, -90, '$PRISMS_o$', fontsize=20)
 plt.text(260, -90, '$AFTER_u$', fontsize=20)
 plt.text(300, -90, '$AFTER_o$', fontsize=20)
 #plt.title(f'SUBJECT {subject + 1} {file}', fontsize=22)
-plt.title('MEAN', fontsize=22)
+plt.title('MEAN (Experiment 3)', fontsize=22)
 
 #PC standard deviation of the 8 throws before googles
 PC_1 = np.std(exp_data[subject][stage[0]])
@@ -108,7 +109,7 @@ plt.text(95, 90, f'$AC = {model[stage[2]][2]:.1f}$', fontsize=20)
 plt.text(185, 90, f'$AC = {model[stage[3]][2]:.1f}$', fontsize=20)
 plt.text(260, 90, f'$AC = {model[stage[4]][2]:.1f}$', fontsize=20)
 plt.text(300, 90, f'$AC = {model[stage[5]][2]:.1f}$', fontsize=20)
-plt.savefig('media/final_final_plots/exp_3/avg.png')
+plt.savefig('media/final_final_plots/exp_3/mean.png')
 plt.show()
 print(model)
 

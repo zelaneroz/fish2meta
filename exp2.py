@@ -18,7 +18,6 @@ n_participants = data[0].count(',')+1
 #stage = ['before_u', 'before_o', 'prism_u', 'prism_o', 'after_u', 'after_o']
 #for experimetn 2
 stage = ['before_u', 'before_o', 'prism', 'after_u', 'after_o']
-
 exp_data = [{x: [] for x in stage} for _ in range(n_participants)]
 #duration = [15, 15, 40, 40, 15, 15] #exp2
 duration = [15,15,40,15,15]
@@ -33,8 +32,11 @@ for x, d in enumerate(data):
         for k, t in x_values.items():
             if x + 1 in t:
                 p[k].append(v)
-
 subject = 5
+avg=[-9,-7,-7,-14,-6,-17,-2,-5,4,-12,2.3,-2.8,-8,3,-10,0.8,-2,2,-3,-3,-7,-11,4.5,6,-6,-4,-3.3,-9,-6,-0.4,-60,-32,-25,-31,-27,-33,-36,-15,-22,-18,-26,-18,-15,-15,-13,-16,-12,-15,-17,-3.8,-11,-12,-8,-11,-16,-2,-9,-20,-6,-6,-12,1,-6,-16,-11,-10,-11,-5,1.5,-8.8,6,9,6,4,-2,4,-0.8,6,-3,-4,-4,2,2,-7,1,40,35,14,19,6,10,6,8,8,17,6,8,2.6,18,8]
+print("Exp 2: ",exp_data[subject])
+exp_data[5]={'before_u': avg[0:15], 'before_o': avg[15:30], 'prism': avg[30:70], 'after_u':avg[70:85], 'after_o': avg[85:100]}
+print(exp_data[5])
 #my_colors = {'before_u': 'b', 'before_o': 'g', 'prism_u': 'r','prism_o': 'r', 'after_u': 'b', 'after_o': 'g'}
 my_colors = {'before_u': 'b', 'before_o': 'g', 'prism': 'r', 'after_u': 'b', 'after_o': 'g'}#exp 2
 #print(exp_data[subject])
@@ -111,7 +113,8 @@ plt.text(37, -90, '$BEFORE_o$', fontsize=20)
 plt.text(105, -90, '$PRISMS$', fontsize=20)
 plt.text(170, -90, '$AFTER_u$', fontsize=20)
 plt.text(210, -90, '$AFTER_o$', fontsize=20)
-plt.title(f'SUBJECT {subject + 1}', fontsize=22)
+#plt.title(f'SUBJECT {subject + 1}', fontsize=22)
+plt.title(f'MEAN', fontsize=22)
 
 # PC standard deviation of the 8 throws before googles
 PC_1 = np.std(exp_data[subject][stage[0]])
@@ -121,6 +124,7 @@ plt.text(37, 90, f'$PC = {PC_2:.1f}$', fontsize=20)
 plt.text(110, 90, f'$AC = {model[stage[2]][2]:.1f}$', fontsize=20)
 plt.text(170, 90, f'$AC = {model[stage[3]][2]:.1f}$', fontsize=20)
 plt.text(210, 90, f'$AC = {model[stage[4]][2]:.1f}$', fontsize=20)
+plt.savefig('media/final_final_plots/exp_2/median.png')
 plt.show()
 
 print(f"PCu = {PC_1:.1f}")

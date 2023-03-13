@@ -17,6 +17,20 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="/Fish2Meta Data - Ex 4 - 3_4_23.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/temp.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
       </map>
     </option>
   </component>

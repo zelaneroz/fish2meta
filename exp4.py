@@ -31,7 +31,7 @@ for x, d in enumerate(data):
         for k, t in x_values.items():
             if x + 1 in t:
                 p[k].append(v)
-subject = 0
+subject = 2
 
 #actually the median
 #exp_data[subject]={'before_u': avg[0:15], 'before_o': avg[15:30], 'prism': avg[30:70], 'after_u':avg[70:85], 'after_o': avg[85:100]}
@@ -103,7 +103,7 @@ plt.text(95, 90, f'$AC = {model[stage[2]][2]:.1f}$', fontsize=20)
 plt.text(185, 90, f'$AC = {model[stage[3]][2]:.1f}$', fontsize=20)
 plt.text(260, 90, f'$AC = {model[stage[4]][2]:.1f}$', fontsize=20)
 plt.text(300, 90, f'$AC = {model[stage[5]][2]:.1f}$', fontsize=20)
-plt.savefig('media/final_final_plots/exp_4/1.png')
+plt.savefig('media/final_final_plots/exp_4/3.png')
 plt.show()
 print(model)
 

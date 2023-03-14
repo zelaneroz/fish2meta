@@ -35,7 +35,7 @@ for x, d in enumerate(data):
             if x + 1 in t:
                 p[k].append(v)
 subject = 0
-avg=[-9,-7,-7,-2,-11,-17,2,-5,4,-12,-6,-2.8,-3,3,-11,0.8,4,2,-3,4,-7,-11,6.6,-18,-10,7,-3.3,-9,-6,-0.4,-53,-16,-10,-45,-24,-44,-36,-20,-28,-24,-28,-19,-23,-37,-21,-22,-23,-18,-28,-10,-11,-13,-12,-17,-9,-2,-9,-21,-8,-10,-12,-18,-6,-21,-11,-10,-12,-10,-19,-2.3,-2,17,1,4,1,-1.8,-0.8,6,-13,3.5,-6,1,2,-7,1,38,35,14,19,2.3,10,12,8,8,19,12,8,2.6,18,10]
+avg=[-5,-7,-7,-3,-5,-1,1,-7,3,-7,-9,-2,-5,3,-8,-1,-8,5,-7,-4,-5,-8,4,-4,-6,0,-4,3,-3,-10,-71,-29,-18,-38,-33,-35,-39,-20,-28,-32,-27,-18,-25,-38,-24,-23,-24,-19,-28,-16,-25,-32,-10,-28,-18,-10,-31,-33,-12,-16,-32,-22,-11,-22,-22,-27,-14,-13,-20,-24,3,6,-5,5,-1,-2,-2,3,-6,4,-8,2,6,-5,5,28,27,10,15,13,7,10,10,8,12,9,10,7,17,6]
 exp_data[subject]={'before_u': avg[0:15], 'before_o': avg[15:30], 'prism': avg[30:70], 'after_u':avg[70:85], 'after_o': avg[85:100]}
 print(exp_data[subject])
 #my_colors = {'before_u': 'b', 'before_o': 'g', 'prism_u': 'r','prism_o': 'r', 'after_u': 'b', 'after_o': 'g'}
@@ -115,7 +115,7 @@ plt.text(105, -90, '$PRISMS$', fontsize=20)
 plt.text(170, -90, '$AFTER_u$', fontsize=20)
 plt.text(210, -90, '$AFTER_o$', fontsize=20)
 #plt.title(f'SUBJECT {subject + 1}', fontsize=22)
-plt.title(f'MEDIAN (Experiment 2)', fontsize=22)
+plt.title(f'MEDIAN (Experiment 1&2)', fontsize=22)
 
 # PC standard deviation of the 8 throws before googles
 PC_1 = np.std(exp_data[subject][stage[0]])
@@ -126,7 +126,7 @@ plt.text(110, 90, f'$AC = {model[stage[2]][2]:.1f}$', fontsize=20)
 plt.text(170, 90, f'$AC = {model[stage[3]][2]:.1f}$', fontsize=20)
 plt.text(210, 90, f'$AC = {model[stage[4]][2]:.1f}$', fontsize=20)
 #plt.savefig(f'media/definite_plots/exp_1/{subject+1}.png')
-plt.savefig(f'media/definite_plots/exp_2/median.png')
+plt.savefig(f'media/definite_plots/median(1-2).png')
 plt.show()
 
 print(f"PCu = {PC_1:.1f}")

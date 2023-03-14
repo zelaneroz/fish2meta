@@ -34,10 +34,9 @@ for x, d in enumerate(data):
                 p[k].append(v)
 subject = 3
 
-#actually the median
 #exp_data[subject]={'before_u': avg[0:15], 'before_o': avg[15:30], 'prism': avg[30:70], 'after_u':avg[70:85], 'after_o': avg[85:100]}
 print(exp_data[subject])
-avg=[-9,-8,-9,4,-2,1,-1,-5,3,-5,8,-13,-4,19,-2,11,-3,-9,14,2,-10,-10,3,13,-6,-21,-1,-16,6,3,-87,-51,-42,-24,-18,-19,-28,-12,-12,-31,-14,-20,-3,-9,-4,-32,-21,-11,-20,-15,-20,-12,-17,-13,-12,-13,-8,-18,-5,-18,-10,-3,-12,-8,-3,-17,1,-3,-18,-5,-54,-53,-54,-37,2,-28,-31,-17,-32,-19,-3,-30,-13,-18,-8,21,5,-18,-4,-12,-17,7,6,1,2,-11,15,-22,-3,-12,-11,-18,-9,-10,-12,5,10,-2,-17,25,55,53,27,20,30,17,13,15,-4,14,-3,7,5,13,21,49,56,24,24,13,11,31,7,16,21,-9,19,17,9,7]
+avg=[-9,-6,-7,4,-3,3,-2,-9,3,-6,6,-12,-4,-4,2,1,-4,-10,-7,3,-12,-12,3,7,-1,0,-3,-16,5,-1,-76,-49,-41,-36,-22,-21,-23,-17,-12,-29,-16,-18,-17,-6,-16,-18,-21,-15,-28,-14,-23,-16,-20,-23,-17,-5,-11,-13,-8,-15,-19,-13,-14,-13,-6,-19,-3,-1,-20,-20,-53,-49,-53,-41,-18,-28,-32,-21,-28,-27,-18,-31,-20,-17,-21,-15,-15,-18,-11,-16,-15,-11,-23,-26,0,-16,-19,-15,-16,-23,-9,-22,-15,-13,-18,-2,-20,-5,-13,-6,55,46,28,20,30,22,13,15,6,9,0,-3,6,2,7,34,29,22,18,14,8,11,4,4,15,0,11,-2,-1,9]
 exp_data[subject] = {'before_u':avg[0:15],'before_o':avg[15:30],'prism_o':avg[30:70],'prism_u':avg[70:110],'after_o':avg[110:125],'after_u':avg[125:140]}
 my_colors = {'before_u': 'b', 'before_o': 'g', 'prism_u': 'r','prism_o': 'r', 'after_u': 'b', 'after_o': 'g'}
 #my_colors = {'before_u': 'b', 'before_o': 'g', 'prism': 'r', 'after_u': 'b', 'after_o': 'g'}#exp 2
@@ -93,7 +92,7 @@ plt.text(185, -90, '$PRISMS_u$', fontsize=20)
 plt.text(260, -90, '$AFTER_o$', fontsize=20)
 plt.text(300, -90, '$AFTER_u$', fontsize=20)
 #plt.title(f'SUBJECT {subject + 1} {file}', fontsize=22)
-plt.title('MEDIAN (Experiment 4)', fontsize=22)
+plt.title('MEDIAN (Experiment 3&4)', fontsize=22)
 
 
 #PC standard deviation of the 8 throws before googles
@@ -106,7 +105,7 @@ plt.text(185, 90, f'$AC = {model[stage[3]][2]:.1f}$', fontsize=20)
 plt.text(260, 90, f'$AC = {model[stage[4]][2]:.1f}$', fontsize=20)
 plt.text(300, 90, f'$AC = {model[stage[5]][2]:.1f}$', fontsize=20)
 #plt.savefig(f'media/definite_plots/exp_3/{subject+1}.png')
-plt.savefig(f'media/definite_plots/exp_4/median.png')
+plt.savefig(f'media/definite_plots/median(3-4).png')
 plt.show()
 print(model)
 

@@ -9,7 +9,9 @@ def exp_model(x, a, b, c):
     return a - (b * np.exp(-x / c))
 
 #file = "Fish2Meta Data - Ex 3 - 1_27_23.csv"
-file="Fish2Meta Data - Ex 2 - 11_30_22.csv"
+#file="Fish2Meta Data - Ex 1 - 11_13_22.csv"
+#file="Fish2Meta Data - Ex 2 - 11_30_22.csv"
+file="Fish2Meta Data - Ex 1 - 11_13_22.csv"
 with open(file) as f:
     data = f.readlines()
 
@@ -33,10 +35,9 @@ for x, d in enumerate(data):
             if x + 1 in t:
                 p[k].append(v)
 subject = 0
-avg=[-11,-4,-5,-11,-5,-13,-8,-13,7,-11,-1,-1,-6,-7,-10,-3,1,1,-3,-2,-4,-9,4,-4,-6,2,-2,-5,-3,-2,-67,-39,-26,-33,-22,-26,-36,-16,-22,-21,-19,-19,-18,-18,-13,-16,-15,-15,-17,-5,-12,-9,-10,-14,-13,-2,-11,-12,-3,-4,-15,-7,-9,-12,-10,-16,-7,-6,-6,-10,3,12,0,5,0,4,0,9,-3,-3,-3,4,0,-6,4,41,33,18,18,7,13,5,5,4,14,5,8,3,11,6]
-print("Exp 2: ",exp_data[subject])
-exp_data[5]={'before_u': avg[0:15], 'before_o': avg[15:30], 'prism': avg[30:70], 'after_u':avg[70:85], 'after_o': avg[85:100]}
-print(exp_data[5])
+avg=[-4,-7,-7,-3,-5,3,0,-8,3,-5,-11,-2,-7,4,1,-10,-17,8,-9,-5,-3,-4,3,-4,-3,-4,-5,3,1,-13,-81,-30,-22,-27,-37,-25,-42,-20,-29,-39,-19,-16,-27,-42,-26,-24,-29,-49,-29,-25,-30,-40,-2,-33,-29,-13,-32,-43,-18,-21,-37,-45,-23,-23,-22,-45,-23,-30,-21,-45,8,5,-9,13,-3,-3,-10,1,-4,5,-9,3,10,-4,7,6,25,2,12,16,4,9,17,7,4,1,11,12,15,3]
+exp_data[subject]={'before_u': avg[0:15], 'before_o': avg[15:30], 'prism': avg[30:70], 'after_u':avg[70:85], 'after_o': avg[85:100]}
+print(exp_data[subject])
 #my_colors = {'before_u': 'b', 'before_o': 'g', 'prism_u': 'r','prism_o': 'r', 'after_u': 'b', 'after_o': 'g'}
 my_colors = {'before_u': 'b', 'before_o': 'g', 'prism': 'r', 'after_u': 'b', 'after_o': 'g'}#exp 2
 #print(exp_data[subject])
@@ -114,7 +115,7 @@ plt.text(105, -90, '$PRISMS$', fontsize=20)
 plt.text(170, -90, '$AFTER_u$', fontsize=20)
 plt.text(210, -90, '$AFTER_o$', fontsize=20)
 #plt.title(f'SUBJECT {subject + 1}', fontsize=22)
-plt.title(f'MEAN (Experiment 2)', fontsize=22)
+plt.title(f'MEDIAN (Experiment 1)', fontsize=22)
 
 # PC standard deviation of the 8 throws before googles
 PC_1 = np.std(exp_data[subject][stage[0]])
@@ -124,7 +125,8 @@ plt.text(37, 90, f'$PC = {PC_2:.1f}$', fontsize=20)
 plt.text(110, 90, f'$AC = {model[stage[2]][2]:.1f}$', fontsize=20)
 plt.text(170, 90, f'$AC = {model[stage[3]][2]:.1f}$', fontsize=20)
 plt.text(210, 90, f'$AC = {model[stage[4]][2]:.1f}$', fontsize=20)
-plt.savefig('media/final_final_plots/exp_2/median.png')
+#plt.savefig(f'media/definite_plots/exp_1/{subject+1}.png')
+plt.savefig(f'media/definite_plots/exp_1/median.png')
 plt.show()
 
 print(f"PCu = {PC_1:.1f}")

@@ -8,7 +8,8 @@ plt.style.use('ggplot')
 def exp_model(x, a, b, c):
     return a - (b * np.exp(-x / c))
 
-file = "Fish2Meta Data - Ex 4 - 3_4_23.csv"
+#file = "Fish2Meta Data - Ex 4 - 3_4_23.csv"
+file="Fish2Meta Data - Ex 3 - 1_27_23.csv"
 with open(file) as f:
     data = f.readlines()
 
@@ -31,12 +32,13 @@ for x, d in enumerate(data):
         for k, t in x_values.items():
             if x + 1 in t:
                 p[k].append(v)
-subject = 2
+subject = 3
 
 #actually the median
 #exp_data[subject]={'before_u': avg[0:15], 'before_o': avg[15:30], 'prism': avg[30:70], 'after_u':avg[70:85], 'after_o': avg[85:100]}
 print(exp_data[subject])
-#exp_data[subject] = {'before_u':avg[0:15],'before_o':avg[15:30],'prism_o':avg[30:70],'prism_u':avg[70:110],'after_o':avg[110:125],'after_u':avg[125:140]}
+avg=[-9,-8,-9,-5,2,1,-1,-3,-1,2,8,-8,-4,2,-2,9,-3,-9,-3,2,-6,-5,2,6,-6,-4,-1,-6,6,5,-84,-51,-42,-34,-23,-31,-30,-12,-30,-31,-18,-26,-22,-14,-15,-32,-21,-25,-20,-15,-20,-12,-17,-13,-12,-23,-8,-18,-11,-18,-17,-6,-9,-8,-20,-8,1,-3,-18,-5,-52,-45,-43,-26,-21,-28,-31,-17,-25,-13,-16,-23,-13,-18,-9,-10,-11,-18,-11,-14,-16,-7,2,-16,-6,-14,7,-9,-8,-9,-17,-13,-9,-10,-12,5,-24,-10,-17,7,55,41,12,20,19,16,13,13,3,14,4,1,5,6,-4,38,35,23,21,13,11,20,1,7,16,3,7,17,9,7]
+exp_data[subject] = {'before_u':avg[0:15],'before_o':avg[15:30],'prism_o':avg[30:70],'prism_u':avg[70:110],'after_o':avg[110:125],'after_u':avg[125:140]}
 my_colors = {'before_u': 'b', 'before_o': 'g', 'prism_u': 'r','prism_o': 'r', 'after_u': 'b', 'after_o': 'g'}
 #my_colors = {'before_u': 'b', 'before_o': 'g', 'prism': 'r', 'after_u': 'b', 'after_o': 'g'}#exp 2
 #print(exp_data[subject])
@@ -90,8 +92,8 @@ plt.text(95, -90, '$PRISMS_o$', fontsize=20)
 plt.text(185, -90, '$PRISMS_u$', fontsize=20)
 plt.text(260, -90, '$AFTER_o$', fontsize=20)
 plt.text(300, -90, '$AFTER_u$', fontsize=20)
-plt.title(f'SUBJECT {subject + 1} {file}', fontsize=22)
-#plt.title('MEAN (Experiment 3 & 4)', fontsize=22)
+#plt.title(f'SUBJECT {subject + 1} {file}', fontsize=22)
+plt.title('MEDIAN (Experiment 4)', fontsize=22)
 
 
 #PC standard deviation of the 8 throws before googles
@@ -103,7 +105,8 @@ plt.text(95, 90, f'$AC = {model[stage[2]][2]:.1f}$', fontsize=20)
 plt.text(185, 90, f'$AC = {model[stage[3]][2]:.1f}$', fontsize=20)
 plt.text(260, 90, f'$AC = {model[stage[4]][2]:.1f}$', fontsize=20)
 plt.text(300, 90, f'$AC = {model[stage[5]][2]:.1f}$', fontsize=20)
-plt.savefig('media/final_final_plots/exp_4/3.png')
+#plt.savefig(f'media/definite_plots/exp_3/{subject+1}.png')
+plt.savefig(f'media/definite_plots/exp_4/median.png')
 plt.show()
 print(model)
 

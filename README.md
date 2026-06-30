@@ -1,6 +1,10 @@
 # Does Learning Transfer During Prism Adaptation?
 
-This repository contains the data and Python analysis for a student research project on **whether the cerebellum transfers motor learning between different hand movements during prism adaptation**.
+This repository contains the data and Python analysis for a student research project on **whether the cerebellum transfers motor learning between different hand movements during prism adaptation**. 
+
+*This project was conducted as part of UWC ISAK Japan's CAS (Creativity, Activity, Service) Project requirements. The IB Diploma Program's CAS component requires students to engage in extracurriculars over 18 months, balancing the rigorous academics with real-world learning, personal growth, and community service. UWC ISAK Japan has a unique additional requirement to CAS called the 'CAS Project' where aside from the regular clubs and extracurriculars, students are required to embark on an independent long-term project of their choice, with the guidance of a faculty member.*
+
+> View `Poster.png` in this repository for the final poster
 
 > **Main finding:** adaptation and post-adaptation error correction were specific to the movement being trained. Learning an overhand throw did not automatically transfer to an underhand throw, or vice versa. This suggests that the cerebellum can maintain partly independent error-correction processes for different movements, even when they pursue the same goal.
 
@@ -94,3 +98,4 @@ Zelan Eroz Espanto led the Python-based data extraction, cleaning, curve fitting
 ## Acknowledgements
 
 We thank Yutaka Hirata and the researchers at the Neural Cybernetics Laboratory for their guidance, facilities, and introduction to prism adaptation and motor learning. This research was supported by the UWC ISAK Japan CAS program.
+ 
